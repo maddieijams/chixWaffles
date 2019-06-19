@@ -1,0 +1,78 @@
+<div class="formGroup">
+    <form [formGroup]="bfastForm" (ngSubmit)="onSubmit()">
+
+      <mat-form-field style="width:450px !important">
+        Name:
+        <input
+        matInput
+        id="name"
+        type="text"
+        formControlName="name"
+        required
+        />
+      </mat-form-field>
+      <br />
+
+      <mat-form-field style="width:450px !important">
+        Address:
+        <input
+          matInput
+          id="address"
+          type="address"
+          formControlName="address"
+        />
+      </mat-form-field>
+      <br />
+
+      <mat-form-field style="width:450px !important">
+          City:
+          <input
+          matInput
+          id="city"
+          type="text"
+          formControlName="city"
+          />
+        </mat-form-field>
+        <br />
+
+      <mat-form-field style="width:450px !important">
+        State:
+        <input
+        matInput
+        id="state"
+        type="text"
+        formControlName="state"
+        />
+      </mat-form-field>
+      <br />
+
+      <mat-form-field style="width:450px !important" aria-placeholder="enter an image url">
+        Image:
+        <input
+        matInput
+        id="image"
+        type="text"
+        formControlName="image"
+        />
+      </mat-form-field>
+      <br />
+
+      <mat-form-field style="width:450px !important">
+        Description:
+        <input
+        matInput
+        id="desc"
+        type="text"
+        formControlName="desc"
+        />
+      </mat-form-field>
+      <br />
+
+      <button mat-raised-button type="submit">
+          Submit
+        </button>
+
+    </form>
+    <br />
+    <span *ngIf="this.returnData">Chicken and waffle creation was successful! Would you like to <a routerLink="/display">return home?</a></span>
+  </div>

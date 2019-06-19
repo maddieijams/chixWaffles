@@ -1,0 +1,32 @@
+<div *ngIf="!this.allBreakfast" class="bodyFont" id="msg">
+  <h3>
+    There are no entries yet :'(
+    <br />
+    Would you like to contribute to the growing database of the Chicken and
+    Waffle Finder?
+  </h3>
+</div>
+
+<a routerLink="/create"><button mat-raised-button id="createButton">Add a Breakfast Spot</button></a>
+<br />
+<br />
+<mat-grid-list rowHeight="25em" cols="4" *ngFor="let breakfast of allBreakfast">
+  <mat-grid-tile colspan="2">
+    <img id="waffleImg" src="{{ breakfast.image }}" />
+  </mat-grid-tile>
+
+  <mat-grid-tile colspan="2">
+    <div>
+      <h2 class="titleFont" id="text-center">{{ breakfast.name }}</h2>
+      <p id="content">
+        <br />{{ breakfast.address }}<br />{{ breakfast.city }},
+        {{ breakfast.state }}<br />{{ breakfast.desc }}
+      </p>
+      <br />
+
+      <a routerLink="/edit"
+        ><button mat-raised-button id= "{{ breakfast.id }}" (click)="getSingleBfast(breakfast.id)">edit</button></a
+      >
+    </div>
+  </mat-grid-tile>
+</mat-grid-list>
