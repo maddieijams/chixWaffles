@@ -8,17 +8,16 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "postinstall": "ng build --prod",
-    "start": "serve -s dist/LumavateClient"
+    "start": "serve -s dist/lumavateclient"
   },
   "private": true,
   "dependencies": {
-    "@angular-devkit/build-angular": "^0.13.6",
     "@angular/animations": "^7.2.10",
     "@angular/cdk": "^7.3.4",
-    "@angular/cli": "^7.3.6",
+    "@angular/cli": "~7.3.4",
+    "@angular/compiler-cli": "~7.2.0",
     "@angular/common": "^7.2.10",
     "@angular/compiler": "^7.2.10",
-    "@angular/compiler-cli": "^7.2.10",
     "@angular/core": "^7.2.10",
     "@angular/forms": "^7.2.10",
     "@angular/material": "^7.3.5",
@@ -26,15 +25,13 @@
     "@angular/platform-browser-dynamic": "^7.2.10",
     "@angular/router": "^7.2.10",
     "core-js": "^2.5.4",
-    "jwt-decode": "^2.2.0",
-    "ng2-us-states": "^2.0.0",
     "rxjs": "~6.3.3",
     "serve": "^10.1.2",
     "tslib": "^1.9.0",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^0.13.6",
+    "@angular-devkit/build-angular": "~0.13.0",
     "@angular/language-service": "^7.2.10",
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "~2.0.3",
@@ -53,6 +50,7 @@
     "typescript": "~3.2.2"
   },
   "engines": {
-    "node": "10.14.2"
+    "node": "10.14.2",
+    "npm":"6.4.1"
   }
 }
