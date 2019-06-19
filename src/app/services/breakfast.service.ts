@@ -6,10 +6,9 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class BreakfastService {
-
   breakfastItem: any;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   // Get all breakfast items
   getAllBreakfast() {
@@ -24,21 +23,17 @@ export class BreakfastService {
 
   // Get single breakfast by id for updating
   getBfastItem(id) {
-    this.http.get(`http://localhost:4000/breakfast/one/${id}`).subscribe(data => {
-     this.breakfastItem = data;
-     console.log(this.breakfastItem);
-   });
+    return this.http.get(`http://localhost:4000/breakfast/one/${id}`);
   }
 
   // Update breakfast by id
-  updateBreakfast(form) {
-    console.log(form)
-    return this.http.put(`http://localhost:4000/breakfast/edit/${this.breakfastItem.id}`, form);
+  updateBreakfast(id, form) {
+    console.log(form);
+    return this.http.put(`http://localhost:4000/breakfast/edit/${id}`, form);
   }
 
   // Delete breakfast by id
   deleteLandmark(id) {
-    return this.http.delete(`http://localhost:4000/breakfast/delete/${this.breakfastItem.id}`);
+    return this.http.delete(`http://localhost:4000/breakfast/delete/${id}`);
   }
-
 }

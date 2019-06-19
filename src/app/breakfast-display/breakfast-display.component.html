@@ -1,4 +1,5 @@
-<div *ngIf="!this.allBreakfast" class="bodyFont" id="msg">
+<h1>Where can I get the best chicken and waffles?!</h1>
+<div *ngIf="!this.allBreakfast">
   <h3>
     There are no entries yet :'(
     <br />
@@ -6,13 +7,14 @@
     Waffle Finder?
   </h3>
 </div>
-
-<a routerLink="/create"><button mat-raised-button id="createButton">Add a Breakfast Spot</button></a>
+<a routerLink="/create"
+  ><button mat-raised-button>Add a Breakfast Spot</button></a
+>
 <br />
 <br />
 <mat-grid-list rowHeight="25em" cols="4" *ngFor="let breakfast of allBreakfast">
   <mat-grid-tile colspan="2">
-    <img id="waffleImg" src="{{ breakfast.image }}" />
+    <img src="{{ breakfast.image }}" id='img'/>
   </mat-grid-tile>
 
   <mat-grid-tile colspan="2">
@@ -24,8 +26,8 @@
       </p>
       <br />
 
-      <a routerLink="/edit"
-        ><button mat-raised-button id= "{{ breakfast.id }}" (click)="getSingleBfast(breakfast.id)">edit</button></a
+      <a routerLink="/edit/{{ breakfast.id }}"
+        ><button mat-raised-button>edit</button></a
       >
     </div>
   </mat-grid-tile>

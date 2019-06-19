@@ -12,10 +12,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./breakfast-display.component.css']
 })
 export class BreakfastDisplayComponent implements OnInit {
-
   allBreakfast: any;
 
-  constructor(private bfastservice: BreakfastService, public router: Router) { }
+  constructor(private bfastservice: BreakfastService, public router: Router) {}
 
   ngOnInit() {
     this.getAll();
@@ -31,5 +30,4 @@ export class BreakfastDisplayComponent implements OnInit {
   getSingleBfast(id) {
     this.bfastservice.getBfastItem(id);
   }
-
 }

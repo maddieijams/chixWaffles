@@ -1,6 +1,10 @@
+<div *ngIf="this.loaded == false">
+  <h2>loading...</h2>
+</div>
+<div class="formGroup" *ngIf="this.loaded == true">
+  <form [formGroup]="bfastForm" (ngSubmit)="onSubmit(this.bfastForm)" >
 
-<div class="formGroup">
-  <form [formGroup]="bfastForm" (ngSubmit)="onSubmit()" *ngIf="this.bfastservice.breakfastItem">
+    <h2>{{ this.updateItem.name }}</h2>
 
     <mat-form-field style="width:450px !important">
       Name:
@@ -9,7 +13,6 @@
       id="name"
       type="text"
       formControlName="name"
-      value={{this.bfastservice.breakfastItem.name}}
       dirty=true
       />
     </mat-form-field>
@@ -22,7 +25,6 @@
         id="address"
         type="address"
         formControlName="address"
-        value={{this.bfastservice.breakfastItem.address}}
       />
     </mat-form-field>
     <br />
@@ -34,7 +36,6 @@
         id="city"
         type="text"
         formControlName="city"
-        value={{this.bfastservice.breakfastItem.city}}
         />
       </mat-form-field>
       <br />
@@ -46,7 +47,6 @@
       id="state"
       type="text"
       formControlName="state"
-      value={{this.bfastservice.breakfastItem.state}}
       />
     </mat-form-field>
     <br />
@@ -58,7 +58,6 @@
       id="image"
       type="text"
       formControlName="image"
-      value={{this.bfastservice.breakfastItem.image}}
       />
     </mat-form-field>
     <br />
@@ -70,7 +69,6 @@
       id="desc"
       type="text"
       formControlName="desc"
-      value={{this.bfastservice.breakfastItem.desc}}
       />
     </mat-form-field>
     <br />
@@ -85,5 +83,5 @@
 <span *ngIf="this.returnData">Chicken and waffle update was successful! Would you like to <a routerLink="/display">return home?</a></span>
 <br />
 <p>Did the chicken and waffles here go bad? <br />
-  <a routerLink="/display"><button mat-raised-button (click)="deleteClick(this.bfastservice.breakfastItem.id)">Delete it!</button></a>
+  <a routerLink="/display"><button mat-raised-button (click)="deleteClick(this.updateItem.id)">Delete it!</button></a>
 </p>
