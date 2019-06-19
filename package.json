@@ -8,7 +8,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "postinstall": "ng build --prod",
-    "start": "serve -s dist/lumavateClient"
+    "start": "serve -s dist/LumavateClient"
   },
   "private": true,
   "dependencies": {
@@ -24,6 +24,7 @@
     "@angular/platform-browser": "^7.2.10",
     "@angular/platform-browser-dynamic": "^7.2.10",
     "@angular/router": "^7.2.10",
+    "@angular-devkit/build-angular": "^0.13.6",
     "core-js": "^2.5.4",
     "jwt-decode": "^2.2.0",
     "ng2-us-states": "^2.0.0",
@@ -33,7 +34,6 @@
     "zone.js": "~0.8.26"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^0.13.6",
     "@angular/language-service": "^7.2.10",
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "~2.0.3",
